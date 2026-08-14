@@ -1,0 +1,21 @@
+Manage Compute Cloud resources
+
+Usage:
+  yc compute <group|command> [flags...] [args...]
+
+Groups:
+  disk                         Manage disks
+  instance                     Manage virtual machine instances
+
+Commands:
+  operation                    Manage compute operations
+
+Flags:
+      --format string
+          Output format: text (default), yaml, json, json-rest
+
+Global Flags:
+      --profile string
+          Set the custom configuration file
+      --debug
+          Debug logging

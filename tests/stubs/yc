@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+# Stand-in for the real yc: prints a fixture instead of talking to the cloud.
+#
+# The command path is every argument that is not a flag, joined with underscores;
+# `yc compute instance --help` reads fixtures/help/compute_instance.txt and a bare
+# `yc --help` reads root.txt. An unknown path exits 1 with no output, the way yc
+# does for a command it does not know.
+#
+# Every run appends a line to $YC_STUB_CALLS when that variable is set, which is
+# how the tests tell a cached lookup from a repeated one.
+path=""
+for arg in "$@"; do
+	case "$arg" in
+		-*) continue ;;
+	esac
+	path="${path:+${path}_}$arg"
+done
+
+[ -n "$YC_STUB_CALLS" ] && echo "${path:-root}" >>"$YC_STUB_CALLS"
+
+fixture="$YC_STUB_FIXTURES/${path:-root}.txt"
+[ -f "$fixture" ] || exit 1
+
+cat "$fixture"

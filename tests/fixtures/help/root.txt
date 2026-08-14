@@ -1,0 +1,29 @@
+Yandex Cloud command-line interface
+
+Usage:
+  yc <group|command> [flags...] [args...]
+  yc [command]
+
+Groups:
+  compute                      Manage Compute Cloud resources
+  iam                          Manage access permissions
+  managed-kubernetes           Manage Managed Service for Kubernetes
+
+Commands:
+  completion                   Generate the completion script
+  init                         Initialize the CLI
+  version                      Show the version of this CLI
+
+Flags:
+      --format string
+          Output format: text (default), yaml, json, json-rest
+  -h, --help
+          Display help for the command
+
+Global Flags:
+      --profile string
+          Set the custom configuration file
+      --debug
+          Debug logging
+      --no-user-output
+          Disable printing user intended output to stderr

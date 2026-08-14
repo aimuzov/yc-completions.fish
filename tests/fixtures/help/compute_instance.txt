@@ -1,0 +1,23 @@
+Manage virtual machine instances
+
+Usage:
+  yc compute instance <command> [flags...] [args...]
+
+Commands:
+  create                       Create a virtual machine
+  delete                       Delete a virtual machine
+  get                          Show information about a virtual machine
+  list                         List virtual machines
+
+Flags:
+      --folder-id string
+          Folder ID
+      --folder-name string
+          Folder name
+      --async
+
+Global Flags:
+      --profile string
+          Set the custom configuration file
+      --debug
+          Debug logging
