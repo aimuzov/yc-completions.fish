@@ -13,6 +13,8 @@ yc compute instance <TAB>         # create, delete, get, list …
 yc compute instance --<TAB>       # flags of the command, plus the global ones
 ```
 
+![yc completions in action](docs/demo.gif)
+
 ## Install
 
 With [fisher](https://github.com/jorgebucaran/fisher):
@@ -60,6 +62,17 @@ fishtape tests/*.test.fish
 
 The suite runs against `tests/stubs/yc`, which prints fixtures instead of talking to the cloud, so
 it needs neither an installed `yc` nor an account, and says the same thing on any machine.
+
+The recording above is scripted, so it can be redone on any machine that has
+[vhs](https://github.com/charmbracelet/vhs) and `ttyd`:
+
+```fish
+cd docs; and vhs demo.tape
+```
+
+It runs in the throwaway fish profile under `docs/demo-profile`, with every XDG directory pointed
+inside it — the recorder's own history stays out of frame, and so do the cloud and folder ids in it.
+The completions themselves come from the real `yc` of whoever records it.
 
 ## License
 
